@@ -1,4 +1,4 @@
-name: checkout code -> build -> test the containers => push to Docker Hub
+name: Checkout, Build, Test, and Push to Docker Hub
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      -  name: Build and push Docker image
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-           docker run -d -p 5000:5000 --name final-python-container ${{ secrets.DOCKER_USERNAME }}/final-python:latest
+          docker run -d -p 5000:5000 --name final-python-container ${{ secrets.DOCKER_USERNAME }}/final-python:latest
 
       - name: Test the container
         run: |
