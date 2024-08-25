@@ -35,7 +35,7 @@ jobs:
 
       - name: Test the container
         run: |
-          sleep 10 # Wait for the container to start
+          sleep 10 
           curl --fail http://localhost:5000/api/doc || (echo "Container test failed!" && exit 1)
 
      
