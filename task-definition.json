@@ -1,0 +1,37 @@
+{
+    "family": "ofer-final-python-td",
+    "containerDefinitions": [
+        {
+            "name": "final-python",
+            "image": "oferisak/final-python:latest",
+            "cpu": 4096,
+            "memory": 8192,
+            "memoryReservation": 6144,
+            "portMappings": [
+                {
+                    "name": "5000",
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "systemControls": []
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::199051453468:role/ecsTaskExecutionRole",
+    "networkMode": "bridge",
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "cpu": "4096",
+    "memory": "9216",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
