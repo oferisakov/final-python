@@ -7,9 +7,9 @@ on:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REPRY: ${{ secrets.ECR_REPOSITORY }}
-  ECS_SERVICE:OSITO ${{ secrets.ECS_SERVICE_NAME }}
-  ECS_CLUSTER: ${{ secrets.ECS_CLUSTER_NAME }}
-  ECS_TASK_DEFINITION: task-definition.json
+  ECS_SERVICE: ${{ secrets.ECS_SERVICE_NAME }}
+  ECS_CLUSTER: ${secrets.ECS_CLUSTER_NAME }}
+  ECS_TASK_DEFINITION: task{ -definition.json
   CONTAINER_NAME: ${{ secrets.CONTAINER_NAME }}
 
 jobs:
