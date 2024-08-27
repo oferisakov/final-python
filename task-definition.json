@@ -1,5 +1,5 @@
 {
-    "family": "ofer-final-python-td",
+    "family": "final_python_ofer_task",
     "containerDefinitions": [
         {
             "name": "final-python",
