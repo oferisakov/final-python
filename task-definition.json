@@ -2,7 +2,7 @@
     "family": "final_python_ofer_task",
     "containerDefinitions": [
         {
-            "name": "final-python",
+            "name": "final-python-container",
             "image": "oferisak/final-python:latest",
             "cpu": 4096,
             "memory": 8192,
