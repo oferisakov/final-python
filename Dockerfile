@@ -13,4 +13,8 @@ RUN pipenv install --system --deploy
 
 EXPOSE 5000
 
+EXPOSE 6000
+
+EXPOSE 7000
+
 CMD ["python", "app.py"]

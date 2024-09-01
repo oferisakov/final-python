@@ -27,11 +27,33 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/final-python:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/redis:latest
+           
+        - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/mysql:latest
+           
+        - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/nginx:latest
 
       - name: Run Docker container
         run: |
-          docker run -d -p 5000:5000 --name final-python-container ${{ secrets.DOCKER_USERNAME }}/final-python:latest
+          docker run -d -p 5000:5000 --name redis-container ${{ secrets.DOCKER_USERNAME }}/redis:latest
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 6000:6000 --name mysql-container ${{ secrets.DOCKER_USERNAME }}/mysql:latest
+
+      - name: Run Docker container
+        run: |
+          docker run -d -p 7000:7000 --name nginx-container ${{ secrets.DOCKER_USERNAME }}/nginx:latest
 
       - name: Test the container
         run: |
